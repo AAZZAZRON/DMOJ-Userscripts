@@ -1,2 +1,2 @@
 # DMOJ-Custom-Leaderboards
-A DMOJ userscript that allows toggling between global leaderboards, live contestants, and customizable custom leaderboard.
+A DMOJ userscript that allows toggling between the default leaderboard, a live contestants leaderboard, and a private leaderboard.
