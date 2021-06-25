@@ -1,4 +1,4 @@
-// put friend's names (case sensitive) in friends
+// put friend's DMOJ handles (case sensitive) in friends
 var friends = [];
 
 $(document).ready(function() {
