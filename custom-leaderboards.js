@@ -1,13 +1,30 @@
-// this userscript allows a user to add a customizable leaderboard to their contests page
-// one can also see live participants as a separate leaderboard
-// to customize the customizable leaderboard, simply write a user's handle in the variable "friends" (line 8)
-// to see the leaderboard, simply click the checkbox on the rankings page
-// add friends by going to their profile and clicking "Add Friend"
+// cookie functions
+function getCookie(name) {
+    var find = name + "=";
+    var things = document.cookie.split("; ");
+    for (let i = 0; i < things.length; i += 1) {
+        var found = true;
+        for (let j = 0; j < find.length; j += 1) {
+            if (things[i][j] != find[j]) {
+                found = false;
+                break;
+            }
+        }
+        if (found) {
+            return things[i].split(find)[1]; // returns value
+        }
+    }
+    return "";
+}
 
+function addCookie(name, value) {
+    var expire = "expires=Fri, 3 Jan 3000 23:59:59 GMT";
+    document.cookie = `${name}=${value}; ${expire};path=/`;
+}
 
 var friends = [];
 
-$(document).ready(function() {
+$(document).ready(function() { // leaderboard stuff
     if ($("li.tab.active")[0].innerText == " Rankings") {
         friends = getCookie("friends").split("!fRiEnDs!");
         var insert = document.querySelector("#content-left > div");
@@ -67,30 +84,6 @@ $(document).ready(function() {
         }
     }
 })
-
-// cookie functions
-function getCookie(name) {
-    var find = name + "=";
-    var things = document.cookie.split("; ");
-    for (let i = 0; i < things.length; i += 1) {
-        var found = true;
-        for (let j = 0; j < find.length; j += 1) {
-            if (things[i][j] != find[j]) {
-                found = false;
-                break;
-            }
-        }
-        if (found) {
-            return things[i].split(find)[1]; // returns value
-        }
-    }
-    return "";
-}
-
-function addCookie(name, value) {
-    var expire = "expires=Fri, 3 Jan 3000 23:59:59 GMT";
-    document.cookie = `${name}=${value}; ${expire};path=/`;
-}
 
 // adding and removing friends
 $(document).ready(function() {
