@@ -1,3 +1,9 @@
+// this userscript allows a user to add a customizable leaderboard to their contests page
+// one can also see live participants as a separate leaderboard
+// to customize the customizable leaderboard, simply write a user's handle in the variable "friends" (line 8)
+// to see the leaderboard, simply click the checkbox on the rankings page
+
+
 // put friend's DMOJ handles (case sensitive) in friends
 var friends = [];
 
