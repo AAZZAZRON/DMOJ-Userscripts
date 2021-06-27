@@ -120,7 +120,6 @@ $(document).ready(function() {
                 friends = getCookie("friends").split("!fRiEnDs!");
                 friends.push(user);
                 addCookie("friends", friends.join("!fRiEnDs!"));
-                alert(user + " has been friended.");
             }
         
             function removeFriend() {
@@ -131,7 +130,6 @@ $(document).ready(function() {
                     }
                 }
                 addCookie("friends", friends.join("!fRiEnDs!"));
-                alert(user + " is no longer your friend.");
             }
         }
     }
