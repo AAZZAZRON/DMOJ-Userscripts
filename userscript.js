@@ -10,9 +10,7 @@ function getCookie(name) {
                 break;
             }
         }
-        if (found) {
-            return things[i].split(find)[1]; // returns value
-        }
+        if (found) return things[i].split(find)[1]; // returns value
     }
     return "";
 }
