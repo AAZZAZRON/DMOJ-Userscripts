@@ -28,14 +28,17 @@ $(document).ready(function() { // leaderboard stuff
     if ($("li.tab.active")[0].innerText == " Rankings") {
         friends = getCookie("friends").split("!fRiEnDs!");
         var insert = document.querySelector("#content-left > div");
+        var elements = $("tbody")[0].children;
         
         // show live participants
         var lbLive = document.createElement("input");
         lbLive.setAttribute("type", "checkbox");
         var tag = document.createElement("label");
         tag.innerText = "Show Live Participants ";
-        insert.appendChild(lbLive);
-        insert.appendChild(tag);
+        if ($("#" + elements[0].id + " > td.user-name > div").length !== 0) {
+            insert.appendChild(lbLive);
+            insert.appendChild(tag);
+        }
         lbLive.checked = false;
         
         // private leaderboard
@@ -46,7 +49,6 @@ $(document).ready(function() { // leaderboard stuff
         insert.appendChild(lbPrivate);
         insert.appendChild(tag2);
         lbPrivate.checked = false;
-        var elements = $("tbody")[0].children;
 
         // live
         lbLive.onclick = commands;
