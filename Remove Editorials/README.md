@@ -8,3 +8,7 @@ What a problem would look like with the editorial button.
 
 What a problem would look like without the editorial button.
 ![image](https://user-images.githubusercontent.com/72463938/133888893-9262d507-28ac-486a-adc1-e3e2d1989ca3.png)
+
+Because there may be a chance that you get very stuck on a problem, inspecting the page will show if there is an editorial.
+
+If there is, it will say `Yes editorial`, otherwise it will say `No editorial`.
